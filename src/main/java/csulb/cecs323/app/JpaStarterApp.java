@@ -13,6 +13,8 @@
 
 package csulb.cecs323.app;
 
+      import csulb.cecs323.model.AcademiProgram;
+      import csulb.cecs323.model.ComputingAccount;
       import csulb.cecs323.model.Student;
 
       import javax.persistence.EntityManager;
@@ -66,14 +68,37 @@ public class JpaStarterApp {
       Student graceHopper = new Student();
       graceHopper.setFirstName("Grace");
       graceHopper.setLastName("Hopper");
-      graceHopper.setGpa(4);
+      graceHopper.setPhoneNumber("7149119999");
+      graceHopper.setEmail("john.luu@student.csulb.edu");
 
       Student jobs = new Student();
       jobs.setFirstName("Steve");
       jobs.setLastName("Wozniak");
-      jobs.setGpa(3.9);
+      graceHopper.setPhoneNumber("7149000000");
+      graceHopper.setEmail("john@student.csulb.edu");
 
       LOGGER.fine("Persisting Student object to DB");
       this.entityManager.persist(jobs);
+   }
+
+   public void createComputingAccountEntity(){
+      LOGGER.fine("Creating Computing Account object");
+
+      ComputingAccount user1 = new ComputingAccount();
+      user1.setUsername("John Luu");
+      user1.setPassword("123456788");
+      user1.setDiskQuote(3444);
+   }
+
+   public void createAcademiProgramEntity() {
+      LOGGER.fine("Creating Academi Program object");
+
+      AcademiProgram user2 = new AcademiProgram();
+
+      user2.setCode("1234");
+      user2.setName("Jack");
+      user2.setDegree("Computer Science");
+      user2.setUnitRequired(5);
+      user2.setYearsCreated(4);
    }
 }
